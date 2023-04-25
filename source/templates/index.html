@@ -1,0 +1,56 @@
+{% extends 'main.html' %}
+
+{% block title %} Agenda - Home{% endblock %}
+
+{% block content %}
+    <!-- Add this block to show flash messages -->
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="flash-messages">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+
+    <h2>Añadir un Jedi o Sith</h2>
+<br>
+    <form action="{{ url_for('add_character') }}" method="post">
+        <label for="name">Nombre:</label>
+        <input type="text" name="name" id="name" minlength="2" maxlength="10" required>
+        <br><br><br>
+        <label for="side">Bando:</label>
+        <select name="side" id="side" required>
+            <option value="jedi">Jedi</option>
+            <option value="sith">Sith</option>
+        </select>
+        <br><br><br>
+        <label for="rank">Rango:</label>
+        <input type="text" name="rank" id="rank" minlength="1" maxlength="2" required>
+        <br><br><br>
+        <label for="power_level">Nivel de poder:</label>
+        <input type="number" name="power_level" id="power_level" id="power_level" min="1" max="100" required>
+        <br><br><br>
+
+        <label for="lightsaber_color">Color de la espada láser:</label>
+        <select name="lightsaber_color" id="lightsaber_color" required>
+            <option value="Azul">Azul</option>
+            <option value="Verde">Verde</option>
+            <option value="Rojo">Rojo</option>
+            <option value="Morado">Morado</option>
+            <option value="Amarillo">Amarillo</option>
+            <option value="Blanco">Blanco</option>
+        </select>
+        <br><br><br>
+        <input type="submit" value="Añadir">
+    </form>
+
+   <h2>otras opciones</h2>
+    <ul>
+        <li><a href="{{ url_for('all_characters') }}" class="other-options">Mostrar todos los Jedi/Sith</a></li>
+        <li><a href="{{ url_for('search_character') }}" class="other-options">Buscar un Jedi/Sith</a></li>
+
+    </ul>
+{% endblock %}

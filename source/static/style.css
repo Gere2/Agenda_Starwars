@@ -1,0 +1,48 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('../static/back.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #EEE;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh; /* Asegurar que el fondo cubra toda la altura de la pantalla */
+}
+
+h1, h2, h3 {
+    font-family: 'Star Wars', 'Arial', sans-serif;
+    font-size: 2.5rem;
+}
+
+h4, h5, h6 {
+    font-family: 'Star Wars', 'Arial', sans-serif;
+    font-size: 1.5rem;
+}
+
+form {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem; /* Añadir espacio debajo del formulario */
+}
+
+table {
+    width: 100%;
+    text-align: center;
+    border-collapse: separate;
+    border-spacing: 0 1rem;
+}
+
+table th, table td {
+    padding: 1rem;
+}
+
+.other-options {
+    font-size: 1.25rem; /* Hacer el texto más grande */
+    font-weight: bold; /* Poner el texto en negrita */
+}
+nav {
+            text-align: center;
+        }

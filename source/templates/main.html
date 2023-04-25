@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Agenda{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css?family=Pathway+Gothic+One" rel="stylesheet">
+     <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+    @font-face {
+        font-family: 'Star Wars';
+        src: url('{{ url_for("static", filename="StarJediHollow.woff2") }}') format('woff2'),
+             url('{{ url_for("static", filename="StarJediHollow.woff") }}') format('woff');
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>Agenda</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Inicio</a>
+        </nav>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+ <!-- Add Bootstrap JS and its dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

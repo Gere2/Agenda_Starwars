@@ -1,0 +1,17 @@
+CREATE DATABASE your_database;
+
+USE your_database;
+
+CREATE TABLE jedis (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(255) NOT NULL,
+  rango VARCHAR(255) NOT NULL,
+  nivel_poder INT NOT NULL
+);
+
+CREATE TABLE siths (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(255) NOT NULL,
+  rango VARCHAR(255) NOT NULL,
+  nivel_poder INT NOT NULL
+);

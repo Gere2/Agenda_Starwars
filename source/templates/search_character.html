@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+
+{% block title %}Galactic Agenda - Search{% endblock %}
+
+{% block content %}
+    <h2>Buscar un Jedi o Sith</h2>
+    <form action="{{ url_for('search_character') }}" method="post">
+        <label for="search_type">Tipo de búsqueda:</label>
+        <select name="search_type" id="search_type" required>
+            <option value="name">Nombre</option>
+            <option value="rank">Rango</option>
+            <option value="power_level">Nivel de poder</option>
+        </select>
+        <br>        <br>        <br>
+
+
+        <label for="search_value">Valor de búsqueda:</label>
+        <input type="text" name="search_value" id="search_value" required>
+        <br>        <br>        <br>
+
+
+        <label for="side">Bando:</label>
+        <select name="side" id="side" required>
+            <option value="jedi">Jedi</option>
+            <option value="sith">Sith</option>
+        </select>
+        <br>        <br>        <br>
+
+
+        <input type="submit" value="Buscar">
+    </form>
+{% endblock %}

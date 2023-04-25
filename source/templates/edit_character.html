@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<h2>Edit {{ side.capitalize() }}</h2>
+<form action="{{ url_for('edit_character', side=side, id=character[0]) }}" method="POST">
+  <label for="name">Name:</label>
+  <input type="text" name="name" id="name" value="{{ character[1] }}" required>
+  <br>
+  <label for="rank">Rank:</label>
+  <input type="text" name="rank" id="rank" value="{{ character[2] }}" required>
+  <br>
+  <label for="power_level">Power Level:</label>
+  <input type="number" name="power_level" id="power_level" value="{{ character[3] }}" required>
+  <br>
+  <input type="submit" value="Save Changes">
+</form>
+<a href="{{ url_for('delete_character', side=side, id=character[0]) }}" onclick="return confirm('Estas segur@ que quieres eliminar este personaje?');">
+  <button>Delete Character</button>
+</a>
+<form action="{{ url_for('change_side', side=side, id=character[0]) }}" method="POST" onsubmit="return confirm('Estas segur@ que quieres cambiar de lado este personaje?');">
+  <input type="submit" value="Change Side">
+</form>
+<a href="{{ url_for('index') }}">Back to Home</a>
+{% endblock %}

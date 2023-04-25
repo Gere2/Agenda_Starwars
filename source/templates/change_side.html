@@ -1,0 +1,11 @@
+
+{% extends 'index.html' %}
+
+{% block content %}
+<h2>Cambiar bando: {{ character[1] }}</h2>
+<p>Actualmente en el bando: {{ side.capitalize() }}</p>
+<form action="{{ url_for('change_side', id=character[0]) }}" method="POST">
+    <input type="submit" value="Cambiar bando">
+</form>
+<a href="{{ url_for('index') }}">Cancelar</a>
+{% endblock %}
